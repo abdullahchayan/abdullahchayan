@@ -3,16 +3,13 @@
   [headers.values]
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "SAMEORIGIN"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    
-    # Permissions Policy: Aktifkan 'payment' jika pakai integrasi bayar, atau tetap kosong jika tidak.
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "no-referrer"
     Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(self), usb=()"
+    
+    # CSP Sangat Ketat karena sudah tidak ada iframe/script dari Google Maps
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
 
-    # CSP yang sudah DIKENDORKAN untuk Google Maps dan Script Luar
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://maps.gstatic.com https://*.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://maps.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self' https://www.google.com; frame-ancestors 'none'; upgrade-insecure-requests;"
-
-    # Cross-Origin Policies: Bagian ini sering memblokir Google Maps jika terlalu ketat
-    Cross-Origin-Embedder-Policy = "unsafe-none"
-    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
-    Cross-Origin-Resource-Policy = "cross-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
