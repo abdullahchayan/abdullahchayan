@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tag keamanan & upgrade request otomatis ke HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Bluder Kresna | Premium Bakery & Pastry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="top-nav">
+        <div class="container flex-nav">
+            <div class="logo-wrapper">
+                <img src="images/logo.png" alt="Bluder Kresna Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#beranda">BERANDA</a></li>
+                <li><a href="tentang.html">TENTANG</a></li>
+                <li><a href="produk.html">PRODUK</a></li>
+                <li><a href="testimoni.html">TESTIMONI</a></li>
+                <li><a href="lokasi.html">LOKASI</a></li>
+                <li class="cart-nav">
+                    <button id="cartToggle" class="cart-button">
+                        🛒 KERANJANG (<span id="cartCount">0</span>)
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   <!-- 5. SECTION TESTIMONI -->
+    <section id="testimoni" class="testimonial-section">
+        <div class="container">
+            <h2 class="title-center">APA KATA MEREKA?</h2>
+            <div class="testimonial-grid">
+                <div class="testi-card">
+                    <p>"Rotinya lembut banget, cokelatnya lumer di mulut. Langganan buat sarapan keluarga!"</p>
+                    <h4>- Ibu Rahma</h4>
+                </div>
+                <div class="testi-card">
+                    <p>"Baru kali ini nemu bluder yang bener-bener fresh dan tanpa pengawet. Recommended!"</p>
+                    <h4>- Bp. Andi</h4>
+                </div>
+                <div class="testi-card">
+                    <p>"Teksturnya juara, keju melimpah. Anak-anak suka banget buat bekal sekolah."</p>
+                    <h4>- Kak Siska</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- 7. FOOTER (LENGKAP) -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <img src="images/logo.png" alt="Bluder Kresna" class="footer-logo">
+                <p>Kualitas rasa yang terjaga sejak gigitan pertama. Tanpa pengawet, murni kelembutan.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#produk">Menu Produk</a></li>
+                    <li><a href="#testimoni">Testimoni</a></li>
+                    <li><a href="#lokasi">Lokasi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Kontak Kami</h4>
+                <p>WA: 0812-3456-7890</p>
+                <p>Email: halo@bluderkresna.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bluder Kresna Bakery. Crafted with Love for Bakery Lovers.</p>
+        </div>
+    </footer>
+
+    <!-- 8. MODAL CHECKOUT & KERANJANG -->
+    <div id="cartModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📋 Checkout Pesanan</h2>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="customer-form">
+                    <input type="text" id="custName" placeholder="Nama Lengkap" autocomplete="name" required>
+                    <input type="text" id="custAddress" placeholder="Alamat Lengkap" required>
+                    <input type="tel" id="custPhone" placeholder="Nomor WhatsApp (Contoh: 62812...)" required>
+                    <select id="payMethod" class="pay-select">
+                        <option value="Bayar Ditempat">Bayar Ditempat (COD)</option>
+                        <option value="QRIS">QRIS</option>
+                        <option value="Bank BCA">Transfer Bank BCA</option>
+                        <option value="Bank Mandiri">Transfer Bank Mandiri</option>
+                    </select>
+                </div>
+                <hr>
+                <ul id="modalItemList"></ul>
+                <div class="modal-summary">
+                    <h3>Total Bayar: Rp <span id="modalTotal">0</span></h3>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="finalOrderBtn" class="btn-confirm">KIRIM PESANAN KE WHATSAPP</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
