@@ -1,10 +1,26 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+    # 1. HSTS (Wajib untuk A+) - Pastikan preload ada
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    # CSP: Izinkan diri sendiri, inline style/script, dan font/gambar dasar
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; frame-ancestors 'none'; upgrade-insecure-requests;"
+    
+    # 2. Anti-Sniffing
+    X-Content-Type-Options = "nosniff"
+    
+    # 3. Anti-Clickjacking
+    X-Frame-Options = "DENY"
+    
+    # 4. Referrer Policy (Lebih ketat)
+    Referrer-Policy = "no-referrer"
+    
+    # 5. Permissions Policy (Lengkap untuk mematikan fitur yang tidak dipakai)
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    
+    # 6. CSP Terketat (Tanpa 'unsafe-inline' jika memungkinkan)
+    # Jika situs Anda tidak pakai script aneh-aneh, gunakan ini:
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
+
+    # 7. Tambahan: Cross-Origin Policies (Sering diminta audit terbaru)
+    Cross-Origin-Embedder-Policy = "require-corp"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
