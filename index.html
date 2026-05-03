@@ -27,8 +27,19 @@
             </ul>
         </div>
     </nav>
-    
-    <!-- 2. SECTION BERANDA (FOTO DI KIRI) -->
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero-banner">
+        <div class="hero-overlay">
+            <div class="container hero-text">
+                <h1>Kelezatan dari Oven Kami</h1>
+                <p>Roti hangat dengan bahan pilihan, dipanggang dengan cinta setiap hari.</p>
+                <a href="#produk" class="btn-hero">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECTION BERANDA (FOTO DI KIRI) -->
     <section id="beranda" class="welcome-section">
         <div class="container">
             <div class="welcome-content">
@@ -45,7 +56,7 @@
         </div>
     </section>
 
-    <!-- 3. SECTION TENTANG KAMI (FOTO DI KANAN) -->
+    <!-- 4. SECTION TENTANG KAMI (FOTO DI KANAN) -->
     <section id="tentang" class="about-section">
         <div class="container">
             <div class="about-content">
@@ -61,7 +72,7 @@
         </div>
     </section>
 
-    <!-- 4. KATALOG PRODUK -->
+    <!-- 5. KATALOG PRODUK -->
     <section id="produk" class="product-section">
         <div class="container">
             <h2 class="title-center">MENU FAVORIT</h2>
@@ -102,31 +113,31 @@
         </div>
     </section>
 
-    <!-- 5. LOKASI TOKO -->
+    <!-- 6. LOKASI TOKO (TOMBOL AMAN UNTUK CSP) -->
     <section id="lokasi" class="location-section">
         <div class="container">
             <h2 class="title-center">KUNJUNGI KAMI</h2>
-            <div class="location-grid">
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56347862248!2d107.5731164!3d-6.9034443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnMTIuNCJTIDEwN8KwMzQnMjMuMiJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="location-info">
-                    <h3>Workshop & Outlet</h3>
+            <div class="location-simple-card">
+                <div class="location-info-full">
+                    <h3>Workshop & Outlet Utama</h3>
                     <p>📍 Jl. Wangi Gandum No. 123, <br>Kota Bakery, Indonesia</p>
-                    <p><strong>Operasional:</strong><br>07.00 - 21.00 WIB</p>
+                    <p><strong>Jam Operasional:</strong><br>07.00 - 21.00 WIB</p>
+                    <a href="https://goo.gl/maps/link-lokasi-anda" target="_blank" class="btn-maps">
+                        📍 BUKA DI GOOGLE MAPS
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. FOOTER -->
+    <!-- 7. FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 Sweet Bakes Bakery. Crafted with ❤️ for Bakery Lovers.</p>
         </div>
     </footer>
 
-    <!-- 7. MODAL CHECKOUT -->
+    <!-- 8. MODAL CHECKOUT & KERANJANG -->
     <div id="cartModal" class="modal hidden">
         <div class="modal-content">
             <div class="modal-header">
@@ -152,6 +163,7 @@
                     </select>
                 </div>
                 <hr>
+                <p><strong>Ringkasan Keranjang:</strong></p>
                 <ul id="modalItemList"></ul>
                 <div class="modal-summary">
                     <p>Total Item: <span id="modalCount">0</span></p>
