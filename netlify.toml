@@ -1,27 +1,30 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    # 1. Tetap untuk standar A+
+    # 1. HSTS (Wajib untuk A+) - Mengunci koneksi HTTPS selama 1 tahun termasuk subdomain
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     
-    # 2. Mencegah browser menebak tipe file
+    # 2. Anti-Sniffing - Memaksa browser mengikuti tipe MIME yang ditentukan server
     X-Content-Type-Options = "nosniff"
     
-    # 3. Proteksi Clickjacking
+    # 3. Anti-Clickjacking - Melarang situs ditampilkan dalam frame/iframe pihak lain
     X-Frame-Options = "DENY"
     
-    # 4. Referrer Policy
+    # 4. Referrer Policy - Kebijakan paling aman untuk melindungi privasi data asal trafik
     Referrer-Policy = "no-referrer"
     
-    # 5. Permissions Policy - Izinkan 'payment' untuk fungsi transaksi jika perlu
-    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(self), usb=()"
+    # 5. Permissions Policy - Mematikan fitur hardware & pelacakan (termasuk FLoC/Interest-Cohort)
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(self), usb=(), interest-cohort=()"
     
-    # 6. Content Security Policy (CSP)
-    # Penyesuaian: Memastikan script-src mengizinkan eksekusi logika internal keranjang
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
+    # 6. Content Security Policy (CSP) - Inti dari keamanan A+
+    # Mengizinkan script dan style internal, namun melarang eksekusi dari sumber luar yang tidak dikenal.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
 
-    # 7. Cross-Origin Policies - PENYESUAIAN PENTING
-    # Kita ubah Embedder-Policy agar tidak memblokir skrip internal yang memanipulasi DOM keranjang
+    # 7. Cross-Origin Policies - Mengisolasi dokumen untuk mencegah serangan side-channel
+    # 'credentialless' memberikan keamanan tinggi tanpa memblokir manipulasi DOM oleh JS lokal (Keranjang).
     Cross-Origin-Embedder-Policy = "credentialless"
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Resource-Policy = "same-origin"
+    
+    # 8. XSS Protection - Proteksi tambahan untuk browser versi lama
+    X-XSS-Protection = "1; mode=block"
