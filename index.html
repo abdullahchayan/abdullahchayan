@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tag ini membantu memperkuat instruksi HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Sweet Bakes - Premium Bakery & Pastry</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,9 +22,10 @@
                 <li><a href="#produk">PRODUK</a></li>
                 <li><a href="#lokasi">LOKASI</a></li>
                 <li class="cart-nav">
-                    <a href="#" id="cartToggle" class="cart-button">
+                    <!-- Tombol keranjang tanpa ID inline untuk keamanan -->
+                    <button id="cartToggle" class="cart-button">
                         🛒 KERANJANG (<span id="cartCount">0</span>)
-                    </a>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -39,7 +42,7 @@
         </div>
     </section>
 
-    <!-- 3. SECTION BERANDA (FOTO DI KIRI) -->
+    <!-- 3. SECTION BERANDA (FOTO KIRI) -->
     <section id="beranda" class="welcome-section">
         <div class="container">
             <div class="welcome-content">
@@ -48,22 +51,20 @@
                 </div>
                 <div class="welcome-text">
                     <h2 class="title-left">SELAMAT DATANG DI SWEET BAKES</h2>
-                    <p>Nikmati sensasi kelembutan roti autentik yang dibuat segar setiap pagi. Kami berkomitmen menggunakan bahan alami terbaik untuk pengalaman rasa tak terlupakan bagi keluarga Anda.</p>
-                    <p>Setiap gigitan adalah bukti dedikasi kami terhadap kualitas, mulai dari adonan sempurna hingga panggangan keemasan.</p>
+                    <p>Nikmati sensasi kelembutan roti autentik yang dibuat segar setiap pagi. Kami menggunakan bahan alami terbaik untuk keluarga Anda.</p>
                     <a href="#produk" class="btn-secondary">Lihat Menu Hari Ini</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. SECTION TENTANG KAMI (FOTO DI KANAN) -->
+    <!-- 4. SECTION TENTANG KAMI (FOTO KANAN) -->
     <section id="tentang" class="about-section">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2 class="title-left">TENTANG SWEET BAKES</h2>
-                    <p>Berawal dari dapur rumah, Sweet Bakes hadir menyajikan roti premium tanpa pengawet. Kami percaya roti terbaik berasal dari proses pemanggangan yang tulus.</p>
-                    <p>Tekstur lembut dan aroma gandum khas kami siap menghadirkan kehangatan di meja makan Anda.</p>
+                    <p>Berawal dari dapur rumah, kami menyajikan roti premium tanpa pengawet dengan proses pemanggangan yang tulus.</p>
                 </div>
                 <div class="about-image">
                     <img src="images/about-bakery.jpg" alt="Dapur Bakery Kami">
@@ -77,97 +78,61 @@
         <div class="container">
             <h2 class="title-center">MENU FAVORIT</h2>
             <div class="product-grid">
+                <!-- Data produk menggunakan atribut data-* agar dibaca oleh main.js -->
                 <div class="card">
-                    <img src="images/produk1.jpg" alt="Roti Bluder Klasik">
+                    <img src="images/produk1.jpg" alt="Roti Bluder">
                     <div class="card-info">
                         <h3>Roti Bluder Klasik</h3>
                         <p class="price">Rp 15.000</p>
-                        <button class="add-to-cart" data-name="Roti Bluder Klasik" data-price="15000">TAMBAH</button>
+                        <button class="btn-add" data-name="Roti Bluder Klasik" data-price="15000">TAMBAH</button>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/produk2.jpg" alt="Croissant Almond">
+                    <img src="images/produk2.jpg" alt="Croissant">
                     <div class="card-info">
                         <h3>Croissant Almond</h3>
                         <p class="price">Rp 25.000</p>
-                        <button class="add-to-cart" data-name="Croissant Almond" data-price="25000">TAMBAH</button>
+                        <button class="btn-add" data-name="Croissant Almond" data-price="25000">TAMBAH</button>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/produk3.jpg" alt="Muffin Cokelat">
-                    <div class="card-info">
-                        <h3>Muffin Cokelat</h3>
-                        <p class="price">Rp 18.000</p>
-                        <button class="add-to-cart" data-name="Muffin Cokelat" data-price="18000">TAMBAH</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/produk4.jpg" alt="Donat Gula Halus">
-                    <div class="card-info">
-                        <h3>Donat Gula Halus</h3>
-                        <p class="price">Rp 12.000</p>
-                        <button class="add-to-cart" data-name="Donat Gula Halus" data-price="12000">TAMBAH</button>
-                    </div>
-                </div>
+                <!-- Tambahkan kartu produk lainnya di sini -->
             </div>
         </div>
     </section>
 
-    <!-- 6. LOKASI TOKO (TOMBOL AMAN UNTUK CSP) -->
+    <!-- 6. LOKASI (AMAN DARI CSP) -->
     <section id="lokasi" class="location-section">
         <div class="container">
-            <h2 class="title-center">KUNJUNGI KAMI</h2>
             <div class="location-simple-card">
-                <div class="location-info-full">
-                    <h3>Workshop & Outlet Utama</h3>
-                    <p>📍 Jl. Wangi Gandum No. 123, <br>Kota Bakery, Indonesia</p>
-                    <p><strong>Jam Operasional:</strong><br>07.00 - 21.00 WIB</p>
-                    <a href="https://goo.gl/maps/link-lokasi-anda" target="_blank" class="btn-maps">
-                        📍 BUKA DI GOOGLE MAPS
-                    </a>
-                </div>
+                <h3>Workshop & Outlet Utama</h3>
+                <p>📍 Jl. Wangi Gandum No. 123, Kota Bakery</p>
+                <a href="https://goo.gl/maps/contoh" target="_blank" rel="noopener" class="btn-maps">
+                    📍 BUKA DI GOOGLE MAPS
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 7. FOOTER -->
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Sweet Bakes Bakery. Crafted with ❤️ for Bakery Lovers.</p>
-        </div>
-    </footer>
-
-    <!-- 8. MODAL CHECKOUT & KERANJANG -->
+    <!-- 7. MODAL CHECKOUT -->
     <div id="cartModal" class="modal hidden">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>📋 Checkout Pesanan</h2>
-                <span id="closeModal" class="close-btn">&times;</span>
+                <button id="closeModal" class="close-btn">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="customer-info">
-                    <label>Data Pengiriman:</label>
-                    <input type="text" id="custName" placeholder="Nama Lengkap" required>
-                    <input type="text" id="custAddress" placeholder="Alamat Lengkap" required>
-                    <input type="tel" id="custPhone" placeholder="Nomor WhatsApp" required>
-                    
-                    <label>Metode Pembayaran:</label>
-                    <select id="payMethod" class="pay-select" required>
-                        <option value="" disabled selected>-- Pilih Pembayaran --</option>
+                <div class="customer-form">
+                    <input type="text" id="custName" placeholder="Nama Lengkap" autocomplete="name">
+                    <input type="text" id="custAddress" placeholder="Alamat Lengkap">
+                    <select id="payMethod" class="pay-select">
                         <option value="Cash (COD)">Cash (COD)</option>
-                        <option value="QRIS">QRIS</option>
                         <option value="Bank BCA">Bank BCA</option>
-                        <option value="Bank BRI">Bank BRI</option>
-                        <option value="Bank Mandiri">Bank Mandiri</option>
-                        <option value="Bank BNI">Bank BNI</option>
+                        <option value="QRIS">QRIS</option>
                     </select>
                 </div>
-                <hr>
-                <p><strong>Ringkasan Keranjang:</strong></p>
                 <ul id="modalItemList"></ul>
                 <div class="modal-summary">
-                    <p>Total Item: <span id="modalCount">0</span></p>
-                    <h3>Total Bayar: Rp <span id="modalTotal">0</span></h3>
+                    <p>Total: Rp <span id="modalTotal">0</span></p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -176,6 +141,7 @@
         </div>
     </div>
 
+    <!-- PENTING: Script diletakkan di akhir untuk memastikan DOM sudah siap -->
     <script src="main.js"></script>
 </body>
 </html>
