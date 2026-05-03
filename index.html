@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Bakes - Premium Bakery & Pastry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="top-nav">
+        <div class="container flex-nav">
+            <div class="logo-wrapper">
+                <img src="images/logo.png" alt="Sweet Bakes Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#beranda">BERANDA</a></li>
+                <li><a href="#tentang">TENTANG</a></li>
+                <li><a href="#produk">PRODUK</a></li>
+                <li><a href="#lokasi">LOKASI</a></li>
+                <li class="cart-nav">
+                    <a href="#" id="cartToggle" class="cart-button">
+                        🛒 KERANJANG (<span id="cartCount">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 2. SECTION BERANDA (FOTO DI KIRI) -->
+    <section id="beranda" class="welcome-section">
+        <div class="container">
+            <div class="welcome-content">
+                <div class="welcome-image">
+                    <img src="images/hero_bg.jpg" alt="Suasana Toko Kami">
+                </div>
+                <div class="welcome-text">
+                    <h2 class="title-left">SELAMAT DATANG DI SWEET BAKES</h2>
+                    <p>Nikmati sensasi kelembutan roti autentik yang dibuat segar setiap pagi. Kami berkomitmen menggunakan bahan alami terbaik untuk pengalaman rasa tak terlupakan bagi keluarga Anda.</p>
+                    <p>Setiap gigitan adalah bukti dedikasi kami terhadap kualitas, mulai dari adonan sempurna hingga panggangan keemasan.</p>
+                    <a href="#produk" class="btn-secondary">Lihat Menu Hari Ini</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECTION TENTANG KAMI (FOTO DI KANAN) -->
+    <section id="tentang" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="title-left">TENTANG SWEET BAKES</h2>
+                    <p>Berawal dari dapur rumah, Sweet Bakes hadir menyajikan roti premium tanpa pengawet. Kami percaya roti terbaik berasal dari proses pemanggangan yang tulus.</p>
+                    <p>Tekstur lembut dan aroma gandum khas kami siap menghadirkan kehangatan di meja makan Anda.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-bakery.jpg" alt="Dapur Bakery Kami">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. KATALOG PRODUK -->
+    <section id="produk" class="product-section">
+        <div class="container">
+            <h2 class="title-center">MENU FAVORIT</h2>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="images/produk1.jpg" alt="Roti Bluder Klasik">
+                    <div class="card-info">
+                        <h3>Roti Bluder Klasik</h3>
+                        <p class="price">Rp 15.000</p>
+                        <button class="add-to-cart" data-name="Roti Bluder Klasik" data-price="15000">TAMBAH</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/produk2.jpg" alt="Croissant Almond">
+                    <div class="card-info">
+                        <h3>Croissant Almond</h3>
+                        <p class="price">Rp 25.000</p>
+                        <button class="add-to-cart" data-name="Croissant Almond" data-price="25000">TAMBAH</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/produk3.jpg" alt="Muffin Cokelat">
+                    <div class="card-info">
+                        <h3>Muffin Cokelat</h3>
+                        <p class="price">Rp 18.000</p>
+                        <button class="add-to-cart" data-name="Muffin Cokelat" data-price="18000">TAMBAH</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/produk4.jpg" alt="Donat Gula Halus">
+                    <div class="card-info">
+                        <h3>Donat Gula Halus</h3>
+                        <p class="price">Rp 12.000</p>
+                        <button class="add-to-cart" data-name="Donat Gula Halus" data-price="12000">TAMBAH</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LOKASI TOKO -->
+    <section id="lokasi" class="location-section">
+        <div class="container">
+            <h2 class="title-center">KUNJUNGI KAMI</h2>
+            <div class="location-grid">
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56347862248!2d107.5731164!3d-6.9034443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnMTIuNCJTIDEwN8KwMzQnMjMuMiJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="location-info">
+                    <h3>Workshop & Outlet</h3>
+                    <p>📍 Jl. Wangi Gandum No. 123, <br>Kota Bakery, Indonesia</p>
+                    <p><strong>Operasional:</strong><br>07.00 - 21.00 WIB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Sweet Bakes Bakery. Crafted with ❤️ for Bakery Lovers.</p>
+        </div>
+    </footer>
+
+    <!-- 7. MODAL CHECKOUT -->
+    <div id="cartModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📋 Checkout Pesanan</h2>
+                <span id="closeModal" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="customer-info">
+                    <label>Data Pengiriman:</label>
+                    <input type="text" id="custName" placeholder="Nama Lengkap" required>
+                    <input type="text" id="custAddress" placeholder="Alamat Lengkap" required>
+                    <input type="tel" id="custPhone" placeholder="Nomor WhatsApp" required>
+                    
+                    <label>Metode Pembayaran:</label>
+                    <select id="payMethod" class="pay-select" required>
+                        <option value="" disabled selected>-- Pilih Pembayaran --</option>
+                        <option value="Cash (COD)">Cash (COD)</option>
+                        <option value="QRIS">QRIS</option>
+                        <option value="Bank BCA">Bank BCA</option>
+                        <option value="Bank BRI">Bank BRI</option>
+                        <option value="Bank Mandiri">Bank Mandiri</option>
+                        <option value="Bank BNI">Bank BNI</option>
+                    </select>
+                </div>
+                <hr>
+                <ul id="modalItemList"></ul>
+                <div class="modal-summary">
+                    <p>Total Item: <span id="modalCount">0</span></p>
+                    <h3>Total Bayar: Rp <span id="modalTotal">0</span></h3>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="finalOrderBtn" class="btn-confirm">PESAN VIA WHATSAPP</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
