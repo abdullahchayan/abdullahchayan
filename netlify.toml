@@ -1,29 +1,26 @@
-# ----------------------------------------------------------------------
-# SECURITY HEADERS - SWEET BAKES BAKERY
-# ----------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # 1. HSTS (Wajib untuk A+) - Pastikan preload ada
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    
+    # 2. Anti-Sniffing
+    X-Content-Type-Options = "nosniff"
+    
+    # 3. Anti-Clickjacking
+    X-Frame-Options = "DENY"
+    
+    # 4. Referrer Policy (Lebih ketat)
+    Referrer-Policy = "no-referrer"
+    
+    # 5. Permissions Policy (Lengkap untuk mematikan fitur yang tidak dipakai)
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    
+    # 6. CSP Terketat (Tanpa 'unsafe-inline' jika memungkinkan)
+    # Jika situs Anda tidak pakai script aneh-aneh, gunakan ini:
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
 
-<IfModule mod_headers.c>
-    # 1. HSTS (Wajib untuk HTTPS A+) - Mengunci koneksi ke HTTPS selama 1 tahun
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-
-    # 2. Anti-Sniffing - Mencegah browser menebak tipe file (keamanan MIME)
-    Header set X-Content-Type-Options "nosniff"
-
-    # 3. Anti-Clickjacking - Melarang situs Anda ditampilkan di dalam frame/iframe orang lain
-    Header set X-Frame-Options "DENY"
-
-    # 4. Referrer Policy - Tidak membocorkan asal link saat pengguna berpindah situs
-    Header set Referrer-Policy "no-referrer"
-
-    # 5. Permissions Policy - Mematikan fitur hardware yang tidak digunakan oleh website roti
-    Header set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(self), usb=()"
-
-    # 6. Content Security Policy (CSP) - HANYA izinkan script & gaya dari server sendiri
-    # Karena Peta dihapus, kita bisa mengunci script-src ke 'self' secara total.
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
-
-    # 7. Cross-Origin Policies - Mencegah serangan lintas domain
-    Header set Cross-Origin-Embedder-Policy "require-corp"
-    Header set Cross-Origin-Opener-Policy "same-origin"
-    Header set Cross-Origin-Resource-Policy "same-origin"
-</IfModule>
+    # 7. Tambahan: Cross-Origin Policies (Sering diminta audit terbaru)
+    Cross-Origin-Embedder-Policy = "require-corp"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
